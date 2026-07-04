@@ -1,0 +1,3 @@
+@flarenetwork/=node_modules/@flarenetwork/
+@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/
+forge-std/=lib/forge-std/src/
