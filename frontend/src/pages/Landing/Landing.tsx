@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-import { SettlementLine } from "../../components/SettlementLine/SettlementLine"
+import { DeadlineMonolith } from "../../components/DeadlineMonolith/DeadlineMonolith"
 import { Button } from "../../components/Button/Button"
+import { bonds } from "../../lib/mock"
 import styles from "./Landing.module.css"
+
+const featured = bonds[0]
 
 const steps = [
   { name: "Lock", text: "The buyer locks FXRP and receives a payment reference." },
@@ -42,7 +45,7 @@ export function Landing() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <SettlementLine />
+          <DeadlineMonolith createdAt={featured.createdAt} deadline={featured.deadline} />
         </motion.div>
       </section>
 
