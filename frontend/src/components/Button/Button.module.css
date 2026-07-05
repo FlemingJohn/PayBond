@@ -17,6 +17,12 @@
   outline-offset: 3px;
 }
 
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .primary {
   background: var(--ember);
   color: var(--obsidian);
