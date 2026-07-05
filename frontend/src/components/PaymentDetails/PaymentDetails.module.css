@@ -4,8 +4,8 @@
   padding: 28px;
   background: var(--carbon);
   border: 1px solid var(--seam);
-  border-radius: var(--radius-lg);
   max-width: 460px;
+  width: 100%;
 }
 
 .head {

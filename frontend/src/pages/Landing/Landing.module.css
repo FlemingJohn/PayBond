@@ -90,9 +90,15 @@
 
 .step {
   display: grid;
-  gap: 12px;
-  padding-top: 24px;
-  border-top: 1px solid var(--seam);
+  gap: 10px;
+  padding: 26px 24px;
+  background: rgba(21, 19, 23, 0.55);
+  border: 1px solid var(--seam);
+  transition: border-color 0.2s var(--ease);
+}
+
+.step:hover {
+  border-color: var(--ember);
 }
 
 .stepNum {

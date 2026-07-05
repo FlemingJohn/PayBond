@@ -16,9 +16,8 @@
   align-items: center;
   gap: 12px;
   padding: 12px 14px;
-  background: var(--carbon);
+  background: var(--obsidian);
   border: 1px solid var(--seam);
-  border-radius: var(--radius);
 }
 
 .value {
