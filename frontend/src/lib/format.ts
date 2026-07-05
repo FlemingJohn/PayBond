@@ -11,6 +11,15 @@ export function padTwo(value: number): string {
   return value.toString().padStart(2, "0")
 }
 
+export function timeAgo(ts: number): string {
+  const minutes = Math.floor((Date.now() - ts) / 60000)
+  if (minutes < 1) return "just now"
+  if (minutes < 60) return `${minutes}m ago`
+  const hours = Math.floor(minutes / 60)
+  if (hours < 24) return `${hours}h ago`
+  return `${Math.floor(hours / 24)}d ago`
+}
+
 type Clock = {
   days: number
   hours: number

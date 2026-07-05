@@ -1,0 +1,71 @@
+.feed {
+  display: grid;
+  border: 1px solid var(--seam);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--seam);
+  transition: background 0.2s var(--ease);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background: var(--carbon);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--ash);
+}
+
+.row[data-kind="created"] .dot {
+  background: var(--ash);
+}
+
+.row[data-kind="paid"] .dot {
+  background: var(--bone);
+}
+
+.row[data-kind="reclaimed"] .dot {
+  background: var(--bone);
+}
+
+.row[data-kind="claimed"] .dot {
+  background: var(--ember);
+}
+
+.label {
+  color: var(--bone);
+  font-size: 14px;
+}
+
+.payee {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ash);
+}
+
+.time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ash);
+}
+
+@media (max-width: 520px) {
+  .row {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .payee {
+    display: none;
+  }
+}
