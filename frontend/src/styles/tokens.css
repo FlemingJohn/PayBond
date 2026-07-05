@@ -1,0 +1,27 @@
+:root {
+  --obsidian: #0a0a0b;
+  --carbon: #151317;
+  --carbon-raised: #1c191f;
+  --seam: #2a252c;
+  --bone: #f3efe7;
+  --ash: #8c8790;
+  --ember: #ff2e2e;
+  --ember-soft: #ff5a4d;
+  --oxblood: #55070c;
+
+  --font-display: "Clash Display", "Segoe UI", sans-serif;
+  --font-body: "Satoshi", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --step-1: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
+  --step0: clamp(1rem, 0.96rem + 0.2vw, 1.06rem);
+  --step1: clamp(1.25rem, 1.15rem + 0.5vw, 1.55rem);
+  --step2: clamp(1.8rem, 1.5rem + 1.4vw, 2.6rem);
+  --step3: clamp(2.8rem, 2rem + 4vw, 5.4rem);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --maxw: 1200px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
