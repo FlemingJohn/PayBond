@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import { DeadlineMonolith } from "../../components/DeadlineMonolith/DeadlineMonolith"
 import { Button } from "../../components/Button/Button"
 import { bonds } from "../../lib/mock"
+import { formatAmount, padTwo } from "../../lib/format"
 import styles from "./Landing.module.css"
-
-const featured = bonds[0]
 
 const steps = [
   { name: "Lock", text: "The buyer locks FXRP and receives a payment reference." },
@@ -13,49 +10,54 @@ const steps = [
   { name: "Settle", text: "Paid returns the deposit. Unpaid releases it to the supplier." }
 ]
 
+const secured = bonds.reduce((sum, bond) => sum + bond.amount, 0)
+
 export function Landing() {
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <motion.div
-          className={styles.copy}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span className={styles.eyebrow}>Cross-chain payment guarantees</span>
-          <h1 className={styles.title}>Pay on time, or the deposit is theirs.</h1>
-          <p className={styles.lead}>
-            Lock a deposit in FXRP on Flare against an XRP payment. Pay before the deadline and it
-            returns to you. Miss it and the supplier takes it. No middleman decides.
-          </p>
-          <div className={styles.actions}>
-            <Link to="/create">
-              <Button>Create a bond</Button>
-            </Link>
-            <Link to="/dashboard">
-              <Button variant="ghost">View bonds</Button>
-            </Link>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className={styles.line}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <DeadlineMonolith createdAt={featured.createdAt} deadline={featured.deadline} />
-        </motion.div>
+        <span className={styles.eyebrow}>Cross-chain payment guarantees</span>
+        <h1 className={styles.title}>Pay on time, or the deposit is theirs.</h1>
+        <p className={styles.lead}>
+          Lock a deposit in FXRP on Flare against an XRP payment. Pay before the deadline and it
+          returns to you. Miss it and the supplier takes it. No middleman decides.
+        </p>
+        <div className={styles.actions}>
+          <Link to="/create">
+            <Button>Create a bond</Button>
+          </Link>
+          <Link to="/dashboard">
+            <Button variant="ghost">View bonds</Button>
+          </Link>
+        </div>
       </section>
 
-      <section className={styles.steps}>
-        {steps.map((step) => (
-          <div key={step.name} className={styles.step}>
-            <span className={styles.stepName}>{step.name}</span>
-            <p>{step.text}</p>
-          </div>
-        ))}
+      <section className={styles.stats}>
+        <div className={styles.stat}>
+          <span className={styles.statValue}>{formatAmount(secured)}</span>
+          <span className={styles.statLabel}>FXRP secured</span>
+        </div>
+        <div className={styles.stat}>
+          <span className={styles.statValue}>{bonds.length}</span>
+          <span className={styles.statLabel}>Bonds created</span>
+        </div>
+        <div className={styles.stat}>
+          <span className={styles.statValue}>0</span>
+          <span className={styles.statLabel}>Disputes</span>
+        </div>
+      </section>
+
+      <section className={styles.how}>
+        <span className={styles.sectionEyebrow}>How it works</span>
+        <div className={styles.steps}>
+          {steps.map((step, index) => (
+            <div key={step.name} className={styles.step}>
+              <span className={styles.stepNum}>{padTwo(index + 1)}</span>
+              <h3 className={styles.stepName}>{step.name}</h3>
+              <p className={styles.stepText}>{step.text}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   )
