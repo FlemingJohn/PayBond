@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-import { BondSeal } from "../../components/BondSeal/BondSeal"
+import { SettlementLine } from "../../components/SettlementLine/SettlementLine"
 import { Button } from "../../components/Button/Button"
-import { bonds } from "../../lib/mock"
 import styles from "./Landing.module.css"
-
-const featured = bonds[0]
 
 const steps = [
   { name: "Lock", text: "The buyer locks FXRP and receives a payment reference." },
@@ -40,19 +37,12 @@ export function Landing() {
         </motion.div>
 
         <motion.div
-          className={styles.visual}
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className={styles.line}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <BondSeal
-            reference={featured.reference}
-            amount={featured.amount}
-            createdAt={featured.createdAt}
-            deadline={featured.deadline}
-            status={featured.status}
-            size={360}
-          />
+          <SettlementLine />
         </motion.div>
       </section>
 
