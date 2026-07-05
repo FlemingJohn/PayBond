@@ -24,6 +24,18 @@ PayBond removes that middleman.
 
 A neutral Flare protocol checks whether the payment happened, so no one has to trust anyone. The same protocol can also prove a payment did not happen, which is what lets the supplier claim the deposit on a default.
 
+## Why Flare
+
+Most payment escrows need a trusted oracle to watch a payment and report back. PayBond does not, because Flare has an enshrined data protocol that most builders overlook: the Flare Data Connector can prove that a specific payment **did not happen** by a deadline.
+
+Everyone else proves a payment happened. PayBond settles on the absence of one. That single primitive is what makes a trustless default path possible, and it is native to Flare.
+
+- **ReferencedPaymentNonexistence** proves the buyer never paid, so the supplier claims the deposit with no arbiter.
+- **Payment** proves the buyer did pay on the XRP Ledger, so the buyer reclaims the deposit.
+- **FXRP** holds the deposit as a trustless representation of XRP, so value stays inside the Flare and XRPL ecosystem.
+
+No middleman decides the outcome. Flare's protocols do.
+
 ## Flow
 
 <p align="center">
@@ -64,27 +76,6 @@ flowchart LR
     VF -.->|attests payment or non-payment| LEDGER
 ```
 
-## Lifecycle
-
-```mermaid
-sequenceDiagram
-    participant B as Buyer
-    participant P as PayBond
-    participant X as XRP Ledger
-    participant S as Supplier
-
-    B->>P: createBond and lock FXRP
-    P-->>B: bond id and reference
-    alt paid on time
-        B->>X: send XRP with reference memo
-        B->>P: reclaim with payment proof
-        P-->>B: return FXRP deposit
-    else missed deadline
-        S->>P: claim with non-payment proof
-        P-->>S: release FXRP deposit
-    end
-```
-
 ## User flow
 
 ```mermaid
@@ -100,6 +91,25 @@ flowchart TD
     RC --> D([Bond settled])
     CL --> D
 ```
+
+## Contracts
+
+`PayBond.sol` holds the deposit and settles it against a Flare Data Connector proof. It never trusts a caller's word.
+
+```solidity
+function createBond(address payee, bytes32 payeeHash, uint256 amount, uint256 deadline)
+    external returns (uint256 bondId, bytes32 reference);
+
+function reclaim(uint256 bondId, IPayment.Proof calldata proof) external;
+
+function claim(uint256 bondId, IReferencedPaymentNonexistence.Proof calldata proof) external;
+```
+
+- **createBond** escrows the buyer's FXRP and returns a unique 32 byte `reference`.
+- **reclaim** returns the deposit to the buyer once a Payment proof shows the XRP arrived on time with the matching reference.
+- **claim** releases the deposit to the supplier once a ReferencedPaymentNonexistence proof shows no such payment arrived by the deadline.
+
+The reference is the key detail. On the XRP Ledger it is carried as a single 32 byte memo, so every bond maps to exactly one payment. A buyer cannot reuse an old payment, and two bonds can never collide.
 
 ## Tech Stack
 
