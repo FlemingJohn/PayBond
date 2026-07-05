@@ -1,4 +1,4 @@
-import { SettlementLine } from "../../components/SettlementLine/SettlementLine"
+import { DeadlineMonolith } from "../../components/DeadlineMonolith/DeadlineMonolith"
 import { PaymentDetails } from "../../components/PaymentDetails/PaymentDetails"
 import { formatAmount } from "../../lib/format"
 import { bonds } from "../../lib/mock"
@@ -15,7 +15,7 @@ export function PayBond() {
           {formatAmount(bond.amount)} <span className={styles.unit}>FXRP</span>
         </span>
       </div>
-      <SettlementLine />
+      <DeadlineMonolith createdAt={bond.createdAt} deadline={bond.deadline} />
       <div className={styles.panel}>
         <PaymentDetails bond={bond} />
       </div>
