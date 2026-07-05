@@ -22,7 +22,9 @@ export const bonds: Bond[] = [
     payeeAddress: "rHb9CJAWyB4rj91VRWn96DkukG4bwABpp1",
     createdAt: now - day * 9,
     deadline: now - day * 2,
-    status: "reclaimed"
+    status: "reclaimed",
+    paidAt: now - day * 3,
+    settledAt: now - day * 2 - 3600000
   },
   {
     id: 3,
@@ -32,6 +34,28 @@ export const bonds: Bond[] = [
     payeeAddress: "rLNaPoKeeBjZe2qs6x52yVPZpZ8td4dc6w",
     createdAt: now - day * 12,
     deadline: now - day * 5,
-    status: "claimed"
+    status: "claimed",
+    settledAt: now - day * 4
+  },
+  {
+    id: 4,
+    reference: "0x5b93c0a1f2e3d4756a8091b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60",
+    amount: 640,
+    payee: "Atlas Freight",
+    payeeAddress: "rPEPPER7kfTD9w2To4CQk6UCfuHM9c6GDY",
+    createdAt: now - day * 1,
+    deadline: now + day * 4,
+    status: "open",
+    paidAt: now - 7200000
+  },
+  {
+    id: 5,
+    reference: "0x1d2c3b4a59687f0e1d2c3b4a596871f07a12e5d8c3b4906f1e2d3c4b5a69788f",
+    amount: 320,
+    payee: "Summit Trading",
+    payeeAddress: "rDsbeomae4FXwgQTJp9Rs64Qg9vDiTCdBv",
+    createdAt: now - day * 6,
+    deadline: now - day * 1,
+    status: "open"
   }
 ]

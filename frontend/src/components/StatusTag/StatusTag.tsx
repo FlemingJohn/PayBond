@@ -1,16 +1,10 @@
-import type { BondStatus } from "../../types/bond"
+import { statusLabels, type DisplayStatus } from "../../lib/status"
 import styles from "./StatusTag.module.css"
 
-const labels: Record<BondStatus, string> = {
-  open: "Open",
-  reclaimed: "Reclaimed",
-  claimed: "Claimed"
-}
-
-export function StatusTag({ status }: { status: BondStatus }) {
+export function StatusTag({ status }: { status: DisplayStatus }) {
   return (
     <span className={styles.tag} data-status={status}>
-      {labels[status]}
+      {statusLabels[status]}
     </span>
   )
 }

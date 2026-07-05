@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { StatusTag } from "../StatusTag/StatusTag"
 import { Countdown } from "../Countdown/Countdown"
 import { shorten, formatAmount } from "../../lib/format"
+import { deriveStatus } from "../../lib/status"
 import type { Bond } from "../../types/bond"
 import styles from "./BondCard.module.css"
 
@@ -9,7 +10,7 @@ export function BondCard({ bond }: { bond: Bond }) {
   return (
     <Link to={`/bond/${bond.id}`} className={styles.card}>
       <div className={styles.top}>
-        <StatusTag status={bond.status} />
+        <StatusTag status={deriveStatus(bond)} />
         {bond.status === "open" ? <Countdown deadline={bond.deadline} /> : null}
       </div>
       <div className={styles.amount}>

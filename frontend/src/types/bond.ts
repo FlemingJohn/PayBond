@@ -9,4 +9,6 @@ export type Bond = {
   createdAt: number
   deadline: number
   status: BondStatus
+  paidAt?: number
+  settledAt?: number
 }

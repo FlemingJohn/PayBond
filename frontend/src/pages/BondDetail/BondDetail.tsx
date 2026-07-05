@@ -5,6 +5,7 @@ import { Countdown } from "../../components/Countdown/Countdown"
 import { PaymentDetails } from "../../components/PaymentDetails/PaymentDetails"
 import { BondActions } from "../../components/BondActions/BondActions"
 import { formatAmount, shorten } from "../../lib/format"
+import { deriveStatus } from "../../lib/status"
 import styles from "./BondDetail.module.css"
 
 export function BondDetail() {
@@ -32,7 +33,7 @@ export function BondDetail() {
           <span className={styles.amount}>
             {formatAmount(bond.amount)} <span className={styles.unit}>FXRP</span>
           </span>
-          <StatusTag status={bond.status} />
+          <StatusTag status={deriveStatus(bond)} />
         </div>
         <div className={styles.meta}>
           <div className={styles.metaRow}>
@@ -43,6 +44,7 @@ export function BondDetail() {
             <span className={styles.metaLabel}>Reference</span>
             <span className={styles.metaMono}>{shorten(bond.reference, 8)}</span>
           </div>
+          <p className={styles.binding}>Locked one-time to this bond. A payment cannot be reused or replayed.</p>
           {bond.status === "open" ? (
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>Time left</span>
