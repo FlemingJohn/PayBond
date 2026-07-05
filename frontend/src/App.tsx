@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { AuroraBackground } from "./components/AuroraBackground/AuroraBackground"
 import { Header } from "./components/Header/Header"
 import { Landing } from "./pages/Landing/Landing"
 import { Dashboard } from "./pages/Dashboard/Dashboard"
@@ -8,6 +9,7 @@ import { PayBond } from "./pages/PayBond/PayBond"
 export function App() {
   return (
     <BrowserRouter>
+      <AuroraBackground />
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
