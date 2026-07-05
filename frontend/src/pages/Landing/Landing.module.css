@@ -1,0 +1,79 @@
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 40px 32px 90px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 70vh;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+
+.title {
+  margin: 18px 0 20px;
+  max-width: 12ch;
+  font-size: var(--step3);
+}
+
+.lead {
+  max-width: 46ch;
+  font-size: var(--step1);
+  line-height: 1.5;
+  color: var(--ash);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.visual {
+  display: grid;
+  place-items: center;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--seam);
+}
+
+.stepName {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--bone);
+}
+
+.step p {
+  margin: 10px 0 0;
+  color: var(--ash);
+}
+
+@media (max-width: 820px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
