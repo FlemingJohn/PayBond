@@ -2,10 +2,10 @@
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 40px;
-  max-width: 960px;
+  gap: 32px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 48px 32px 90px;
+  padding: 56px 32px 100px;
 }
 
 .head {
@@ -33,9 +33,4 @@
   font-size: 14px;
   letter-spacing: 3px;
   color: var(--ash);
-}
-
-.panel {
-  display: flex;
-  justify-content: center;
 }
