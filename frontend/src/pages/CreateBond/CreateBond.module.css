@@ -1,0 +1,45 @@
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 48px 32px 90px;
+}
+
+.heading {
+  margin-bottom: 28px;
+  font-size: var(--step2);
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ash);
+}
+
+.field input {
+  padding: 14px 16px;
+  background: var(--carbon);
+  border: 1px solid var(--seam);
+  border-radius: var(--radius);
+  color: var(--bone);
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--ember);
+}
