@@ -1,0 +1,11 @@
+.clock {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--ember);
+}
+
+.clock[data-expired="true"] {
+  color: var(--ash);
+}
