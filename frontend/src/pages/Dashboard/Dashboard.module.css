@@ -24,6 +24,20 @@
   font-size: var(--step2);
 }
 
+.section {
+  margin-top: 48px;
+}
+
+.sectionTitle {
+  display: block;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ash);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
