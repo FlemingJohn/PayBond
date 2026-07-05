@@ -85,6 +85,22 @@ sequenceDiagram
     end
 ```
 
+## User flow
+
+```mermaid
+flowchart TD
+    S([Open PayBond]) --> W[Connect wallet]
+    W --> C[Create a bond]
+    C --> L[Lock FXRP, set supplier, amount and deadline]
+    L --> R[Receive the payment reference]
+    R --> P[Buyer pays XRP with that reference]
+    P --> Q{Paid before the deadline?}
+    Q -->|Yes| RC[Buyer reclaims the deposit]
+    Q -->|No| CL[Supplier claims the deposit]
+    RC --> D([Bond settled])
+    CL --> D
+```
+
 ## Tech Stack
 
 | Layer | Tech |
