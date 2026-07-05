@@ -1,0 +1,22 @@
+.panel {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+  background: var(--carbon);
+  border: 1px solid var(--seam);
+  border-radius: var(--radius-lg);
+  max-width: 460px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--bone);
+}
