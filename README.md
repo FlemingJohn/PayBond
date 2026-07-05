@@ -111,6 +111,20 @@ function claim(uint256 bondId, IReferencedPaymentNonexistence.Proof calldata pro
 
 The reference is the key detail. On the XRP Ledger it is carried as a single 32 byte memo, so every bond maps to exactly one payment. A buyer cannot reuse an old payment, and two bonds can never collide.
 
+## Features
+
+- **Bond status tracking.** Every bond moves through clear states so both sides always know where it stands: Funded, Paid, Expired, Reclaimed, Claimed. The state is derived from the deadline and whether payment was detected, and shows as a tag on every card and detail view.
+- **Reference binding.** Each bond issues a unique 32 byte reference that binds one-to-one to a single XRP payment. A payment cannot be reused across bonds and cannot be replayed, which removes the most common escrow fraud without any extra checks.
+- **Analytics.** A dashboard overview reports FXRP locked, active bonds, total bonds, and default rate, so the health of the system is visible at a glance.
+- **Activity feed.** Bond events are surfaced as a live feed: bond created, payment detected, deposit reclaimed, deposit claimed. Each entry links back to its bond.
+
+## Roadmap
+
+- Partial and installment payments for B2B trade.
+- A dispute window after the deadline before the supplier can claim.
+- Multi-party escrow for one buyer and many suppliers.
+- Wiring the interface to the deployed contract and live Flare Data Connector proofs.
+
 ## Tech Stack
 
 | Layer | Tech |
