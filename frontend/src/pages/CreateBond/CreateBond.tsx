@@ -13,7 +13,12 @@ export function CreateBond() {
 
   return (
     <main className={styles.main}>
-      <h2 className={styles.heading}>Create a bond</h2>
+      <div className={styles.head}>
+        <span className={styles.eyebrow}>New guarantee</span>
+        <h2 className={styles.title}>Create a bond</h2>
+        <p className={styles.lead}>Lock FXRP against an XRP payment. Set the supplier, the amount, and the deadline.</p>
+      </div>
+
       <form className={styles.form} onSubmit={submit}>
         <label className={styles.field}>
           <span>Supplier address</span>
