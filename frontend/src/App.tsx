@@ -4,7 +4,7 @@ import { Header } from "./components/Header/Header"
 import { Landing } from "./pages/Landing/Landing"
 import { Dashboard } from "./pages/Dashboard/Dashboard"
 import { CreateBond } from "./pages/CreateBond/CreateBond"
-import { PayBond } from "./pages/PayBond/PayBond"
+import { BondDetail } from "./pages/BondDetail/BondDetail"
 
 export function App() {
   return (
@@ -15,8 +15,7 @@ export function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create" element={<CreateBond />} />
-        <Route path="/pay" element={<PayBond />} />
-        <Route path="/pay/:id" element={<PayBond />} />
+        <Route path="/bond/:id" element={<BondDetail />} />
       </Routes>
     </BrowserRouter>
   )
