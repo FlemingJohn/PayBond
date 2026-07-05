@@ -1,0 +1,43 @@
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ash);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--carbon);
+  border: 1px solid var(--seam);
+  border-radius: var(--radius);
+}
+
+.value {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--bone);
+  overflow-wrap: anywhere;
+}
+
+.copy {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--ember);
+}
+
+.copy:hover {
+  color: var(--ember-soft);
+}
