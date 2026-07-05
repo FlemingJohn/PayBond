@@ -1,0 +1,55 @@
+.panel {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  background: var(--carbon);
+  border: 1px solid var(--seam);
+  align-content: start;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--bone);
+}
+
+.actions {
+  display: grid;
+  gap: 18px;
+}
+
+.action {
+  display: grid;
+  gap: 8px;
+}
+
+.action button {
+  width: 100%;
+}
+
+.hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--ash);
+}
+
+.verifying {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--bone);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--ember);
+}
+
+.note {
+  margin: 0;
+  color: var(--ash);
+}
