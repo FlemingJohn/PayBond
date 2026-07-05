@@ -1,28 +1,33 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 18px 32px;
-  background: rgba(10, 10, 11, 0.6);
-  backdrop-filter: blur(12px);
+  gap: 20px;
+  padding: 15px 24px;
+  background: rgba(10, 10, 11, 0.7);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--seam);
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.word {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: -0.01em;
 }
 
 .nav {
   display: flex;
-  gap: 22px;
-  margin-left: auto;
-  margin-right: 8px;
+  gap: 24px;
+  margin-left: 24px;
   font-size: 15px;
   color: var(--ash);
 }
@@ -31,8 +36,60 @@
   color: var(--bone);
 }
 
-@media (max-width: 620px) {
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 0 11px;
+  background: transparent;
+  border: 1px solid var(--seam);
+}
+
+.line {
+  display: block;
+  height: 1.5px;
+  background: var(--bone);
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 680px) {
   .nav {
     display: none;
+  }
+
+  .toggle {
+    display: flex;
+  }
+
+  .mobileNav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: grid;
+    padding: 8px 24px 20px;
+    background: rgba(10, 10, 11, 0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--seam);
+  }
+
+  .mobileNav a {
+    padding: 14px 0;
+    font-size: 16px;
+    color: var(--bone);
+    border-bottom: 1px solid var(--seam);
   }
 }
