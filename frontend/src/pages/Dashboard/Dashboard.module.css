@@ -3,16 +3,35 @@
   z-index: 1;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 40px 32px 90px;
+  padding: 48px 32px 100px;
 }
 
-.heading {
-  margin-bottom: 28px;
+.head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+
+.title {
   font-size: var(--step2);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
+  gap: 20px;
+}
+
+@media (max-width: 520px) {
+  .main {
+    padding: 40px 20px 80px;
+  }
 }
