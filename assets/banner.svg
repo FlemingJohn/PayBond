@@ -1,40 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="PayBond banner">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1f3a"/>
-      <stop offset="1" stop-color="#0e5b62"/>
+      <stop offset="0" stop-color="#0a0a0b"/>
+      <stop offset="1" stop-color="#180a0c"/>
     </linearGradient>
+    <radialGradient id="emberGlow" cx="0.82" cy="0.05" r="0.75">
+      <stop offset="0" stop-color="#ff2e2e" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#ff2e2e" stop-opacity="0"/>
+    </radialGradient>
     <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#22d3ee" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ff2e2e" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ff2e2e"/>
+      <stop offset="1" stop-color="#ff2e2e" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <rect x="0" y="0" width="1200" height="300" rx="24" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="1200" height="300" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="1200" height="300" fill="url(#emberGlow)"/>
 
-  <text x="70" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="96" font-weight="700" fill="#f8fafc">PayBond</text>
-  <text x="74" y="205" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#9fd4d9">Trustless cross-chain payment guarantees</text>
+  <g transform="translate(80,108)">
+    <rect x="-15" y="-15" width="30" height="30" transform="rotate(45)" fill="none" stroke="#f3efe7" stroke-width="2"/>
+    <line x1="-11" y1="0" x2="11" y2="0" stroke="#ff2e2e" stroke-width="3"/>
+  </g>
 
-  <rect x="74" y="224" width="0" height="5" rx="2" fill="#22d3ee">
-    <animate attributeName="width" from="0" to="380" dur="1.4s" fill="freeze"/>
+  <text x="112" y="130" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="78" font-weight="700" fill="#f3efe7">PayBond</text>
+  <text x="115" y="180" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#9a9299">Trustless cross-chain payment guarantees</text>
+
+  <rect x="115" y="198" width="0" height="4" fill="#ff2e2e">
+    <animate attributeName="width" from="0" to="360" dur="1.4s" fill="freeze"/>
   </rect>
 
-  <g transform="translate(770,150)">
+  <g transform="translate(780,155)">
     <line x1="0" y1="0" x2="340" y2="0" stroke="url(#lineGrad)" stroke-width="4" stroke-dasharray="14 12">
       <animate attributeName="stroke-dashoffset" from="0" to="-260" dur="3s" repeatCount="indefinite"/>
     </line>
 
-    <circle cx="0" cy="0" r="30" fill="#0b1f3a" stroke="#22d3ee" stroke-width="2"/>
-    <text x="0" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#cbeef1">Buyer</text>
+    <circle cx="0" cy="0" r="30" fill="#0a0a0b" stroke="#ff2e2e" stroke-width="2"/>
+    <text x="0" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#c9c4cc">Buyer</text>
 
-    <circle cx="170" cy="0" r="30" fill="#0b1f3a" stroke="#22d3ee" stroke-width="2"/>
-    <text x="170" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#cbeef1">Bond</text>
+    <circle cx="170" cy="0" r="30" fill="#0a0a0b" stroke="#ff2e2e" stroke-width="2"/>
+    <text x="170" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#c9c4cc">Bond</text>
 
-    <circle cx="340" cy="0" r="30" fill="#0b1f3a" stroke="#22d3ee" stroke-width="2"/>
-    <text x="340" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#cbeef1">Supplier</text>
+    <circle cx="340" cy="0" r="30" fill="#0a0a0b" stroke="#ff2e2e" stroke-width="2"/>
+    <text x="340" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#c9c4cc">Supplier</text>
 
-    <circle r="11" fill="#fbbf24">
+    <circle r="10" fill="#ff5a4d">
       <animateMotion dur="3s" repeatCount="indefinite" path="M0,0 L340,0"/>
     </circle>
   </g>
