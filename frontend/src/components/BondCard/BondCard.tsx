@@ -1,22 +1,21 @@
-import { BondSeal } from "../BondSeal/BondSeal"
 import { StatusTag } from "../StatusTag/StatusTag"
-import { shorten } from "../../lib/format"
+import { Countdown } from "../Countdown/Countdown"
+import { shorten, formatAmount } from "../../lib/format"
 import type { Bond } from "../../types/bond"
 import styles from "./BondCard.module.css"
 
 export function BondCard({ bond }: { bond: Bond }) {
   return (
     <article className={styles.card}>
-      <BondSeal
-        reference={bond.reference}
-        amount={bond.amount}
-        createdAt={bond.createdAt}
-        deadline={bond.deadline}
-        status={bond.status}
-        size={200}
-      />
-      <div className={styles.meta}>
+      <div className={styles.top}>
         <StatusTag status={bond.status} />
+        {bond.status === "open" ? <Countdown deadline={bond.deadline} /> : null}
+      </div>
+      <div className={styles.amount}>
+        <span className={styles.value}>{formatAmount(bond.amount)}</span>
+        <span className={styles.unit}>FXRP</span>
+      </div>
+      <div className={styles.meta}>
         <span className={styles.payee}>{bond.payee}</span>
         <span className={styles.ref}>{shorten(bond.reference, 6)}</span>
       </div>

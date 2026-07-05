@@ -1,8 +1,7 @@
 .card {
   display: grid;
-  justify-items: center;
-  gap: 16px;
-  padding: 28px;
+  gap: 18px;
+  padding: 24px;
   background: var(--carbon);
   border: 1px solid var(--seam);
   border-radius: var(--radius-lg);
@@ -14,11 +13,37 @@
   transform: translateY(-4px);
 }
 
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.amount {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--bone);
+}
+
+.unit {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--ash);
+}
+
 .meta {
   display: grid;
-  justify-items: center;
-  gap: 7px;
-  text-align: center;
+  gap: 6px;
 }
 
 .payee {
