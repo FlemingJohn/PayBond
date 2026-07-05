@@ -1,0 +1,16 @@
+.logo {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.frame {
+  fill: none;
+  stroke: var(--bone);
+  stroke-width: 1.4;
+}
+
+.bar {
+  stroke: var(--ember);
+  stroke-width: 2;
+}
