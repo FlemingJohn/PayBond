@@ -1,0 +1,86 @@
+.wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.rail {
+  stroke: var(--seam);
+  stroke-width: 2;
+}
+
+.flow {
+  stroke: var(--ember);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 2 10;
+  opacity: 0.8;
+  animation: flow 1s linear infinite;
+}
+
+.branchUp {
+  stroke: var(--seam);
+  stroke-width: 2;
+}
+
+.branchDown {
+  stroke: rgba(255, 46, 46, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 5 6;
+}
+
+.deadline {
+  stroke: var(--ember);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.pulse {
+  fill: var(--ember);
+}
+
+.marker {
+  fill: var(--ember);
+  filter: drop-shadow(0 0 8px rgba(255, 46, 46, 0.85));
+}
+
+.nodeBone {
+  fill: var(--bone);
+}
+
+.nodeEmber {
+  fill: var(--ember);
+}
+
+.label {
+  fill: var(--bone);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.labelEmber {
+  fill: var(--ember);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.sub {
+  fill: var(--ash);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
