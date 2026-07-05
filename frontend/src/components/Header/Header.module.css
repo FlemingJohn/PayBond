@@ -1,0 +1,38 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 32px;
+  background: rgba(10, 10, 11, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--seam);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+  margin-left: auto;
+  margin-right: 8px;
+  font-size: 15px;
+  color: var(--ash);
+}
+
+.nav a:hover {
+  color: var(--bone);
+}
+
+@media (max-width: 620px) {
+  .nav {
+    display: none;
+  }
+}
