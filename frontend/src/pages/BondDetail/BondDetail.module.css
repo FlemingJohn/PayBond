@@ -1,0 +1,95 @@
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 32px 100px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--ash);
+}
+
+.back:hover {
+  color: var(--ember);
+}
+
+.head {
+  display: grid;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--seam);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.amount {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step2);
+  color: var(--bone);
+}
+
+.unit {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--ash);
+}
+
+.meta {
+  display: grid;
+  gap: 12px;
+  max-width: 480px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.metaLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ash);
+}
+
+.metaValue {
+  color: var(--bone);
+}
+
+.metaMono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--bone);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  align-items: start;
+}
+
+.missing {
+  color: var(--ash);
+}
+
+.missing a {
+  color: var(--ember);
+}
